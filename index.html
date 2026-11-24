@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#a3361c"><link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><title>RDR2 · Conquistas</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rye&display=swap">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#000;--card:#111;--ink:#fff;--mut:#c4c4c4;--acc:#e0482a;--ok:#4caf50;--line:#2c2c2c;color-scheme:dark}
+:root[data-theme="light"]{--bg:#fff;--card:#f3f3f3;--ink:#000;--mut:#444;--acc:#a3361c;--ok:#2a6b34;--line:#cfcfcf;color-scheme:light}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 -apple-system,system-ui,"Segoe UI",Roboto,sans-serif;padding-bottom:84px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:10}
+h1,h2{font-family:Rye,Georgia,serif;font-weight:400;margin:0}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding:10px 14px}
+header h1{font-size:20px;color:var(--acc)}
+.bar{height:8px;background:var(--line);border-radius:6px;margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ok);transition:width .3s}
+.sub{font-size:13px;color:var(--mut);margin-top:4px}
+main{padding:12px 14px;max-width:640px;margin:0 auto}
+input,select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit;margin:6px 0 12px}
+.btn{display:block;width:100%;padding:13px;border:0;border-radius:10px;background:var(--acc);color:#fff;font:inherit;font-weight:600;text-align:center;text-decoration:none;cursor:pointer}
+.btn.alt{background:transparent;color:var(--acc);border:1px solid var(--acc);margin-top:8px}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px}
+.chip{flex:none;padding:6px 12px;border-radius:16px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:14px}
+.chip.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.card{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px}
+.card.ok{border-color:var(--ok)}.card.ok .n{text-decoration:line-through;opacity:.75}
+.chk{flex:none;width:34px;height:34px;border-radius:50%;border:2px solid var(--mut);background:transparent;color:#fff;font-size:18px;line-height:1}
+.ok .chk{background:var(--ok);border-color:var(--ok)}
+.b{min-width:0}.n{font-weight:700}.d{font-size:14px;color:var(--mut);margin:2px 0 6px}
+.o{font-size:12px;color:var(--mut);margin-bottom:4px}
+.grp{margin:20px 0 8px}.grp b{font-family:Rye,Georgia,serif;font-weight:400;font-size:18px;color:var(--acc)}.warn{font-size:13px;color:var(--mut);margin-top:2px}
+.mis{display:inline-block;font-size:12px;font-weight:700;background:var(--acc);color:#fff;border-radius:8px;padding:2px 8px;margin-bottom:6px}
+ul.tip{padding-left:24px;margin:8px 0 0}
+.det{position:fixed;inset:0;background:var(--bg);z-index:15;overflow-y:auto;padding:calc(env(safe-area-inset-top,0px) + 12px) 16px calc(env(safe-area-inset-bottom,0px) + 24px)}
+.det h2{font-size:24px;color:var(--acc);margin:12px 0 4px}.det ol{padding-left:22px;margin:6px 0 0}.det li{margin-bottom:8px}
+.tag{font-size:12px;background:var(--line);border-radius:8px;padding:2px 8px;margin-right:8px}
+.tip{margin-top:8px;font-size:14px;border-left:3px solid var(--acc);padding-left:10px}
+a.lnk{font-size:13px;color:var(--acc);text-decoration:underline}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
+.empty{text-align:center;color:var(--mut);padding:30px 0}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px);z-index:6}
+nav button{flex:1;border:0;background:none;color:var(--mut);padding:8px 0;font:inherit;font-size:11px}
+nav button span{display:block;font-size:20px}nav button.on{color:var(--acc);font-weight:700}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;padding:20px;z-index:20;overflow:hidden}
+.pop{max-height:90vh;overflow-y:auto;background:var(--card);border:2px solid var(--acc);border-radius:16px;padding:24px;text-align:center;max-width:340px;animation:pop .35s}
+.pop h2{color:var(--acc);font-size:26px;margin:6px 0 10px}
+.fall{position:absolute;top:-30px;font-size:24px;animation:fall 2.6s linear forwards}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const RAW=[
+"P|Lenda do Oeste~Legend of the West|Ganhar todas as outras conquistas (inclui as online)|Só existe no PlayStation (platina). Destrava sozinha ao concluir tudo; DLC não é necessária.",
+"H|De Volta à Lama~Back in the Mud|Concluir o Capítulo 1|Automática, não dá pra perder.",
+"H|Apenas um Arranhão~Just a Scratch|Concluir “Enter, Pursued by a Memory”|Automática, vem com a história.",
+"H|Rumo a Pastos Mais Verdes~To Greener Pastures|Concluir o Capítulo 2|Automática. Antes de fechar o capítulo, faça os itens perdíveis.",
+"H|Acertando as Rixas~Settling Feuds|Concluir o Capítulo 3|Automática. Faça os perdíveis antes de fechar o capítulo.",
+"H|Náufrago~Washed Ashore|Concluir o Capítulo 4|Automática. Último capítulo com caixa de doações e pedidos do acampamento.",
+"H|Sem Traidores~No Traitors|Concluir o Capítulo 5|Automática.",
+"H|Na Terceira Vez é de Sorte~Third Time Lucky|Concluir “Goodbye, Dear Friend”|Automática, no Capítulo 6.",
+"H|Redenção~Redemption|Concluir “Red Dead Redemption”|Automática, no fim do Capítulo 6 (começa o Epílogo).",
+"H|Cowboy Construtor~Cowboy Builder|Concluir “A New Jerusalem”|Automática, no Epílogo.",
+"H|Verão sem Fim~Endless Summer|Concluir o Epílogo|Destrava ao terminar a Parte II do Epílogo (fim da história).",
+"H|Dando uma Mão~Lending a Hand|Concluir todas as missões opcionais de Honra|PERDÍVEL. Jogue com honra desde o início: no Cap. 6 precisa de Honra nível 4/8 para “Do Not Seek Absolution”. Confira o Registro de História (Pausa > Progresso > História) a cada capítulo. Repetir missão não conta.",
+"H|Corrida do Ouro~Gold Rush|70 medalhas de ouro em missões da história|É a mais difícil. Todos os objetivos de ouro precisam sair na mesma tentativa (veja Pausa > História). Dá para refazer missões depois, pelo menu.",
+"H|O Melhor do Oeste~Best in the West|Atingir 100% de conclusão|Acompanhe em Pausa > Progresso > Conclusão Total. Colecionáveis precisam estar completos; o resto é mais flexível.",
+"M|Amigos com Benefícios~Friends With Benefits|Fazer uma atividade de companheiro em cada acampamento|PERDÍVEL. Uma por capítulo (2, 3 e 4): ex. Javier ou Charles no Cap. 2; Sean, Bill ou Kieran no 3; Micah, Lenny ou Pearson no 4. Salve antes de cada capítulo.",
+"M|Garoto de Recados~Errand Boy|Entregar 5 pedidos de itens de companheiros|PERDÍVEL (Cap. 2–4). Fique no acampamento de dia (8h–20h) e converse com todos. Fáceis: Bill (pomada) e Sean (bourbon) nas lojas; Charles (moonshine) no fence.",
+"M|Dê aos Pobres~Give to the Poor|Doar $250 na caixa de doações|PERDÍVEL: a caixa some depois do Cap. 4. Pode doar em partes; doações dos outros não contam.",
+"M|Passatempos~Hobby Horse|Jogar todos os minijogos|Só sentar em cada um: Five Finger Fillet (Strawberry), Blackjack (Rhodes), Dominó (Saint Denis, parque) e Pôquer (Saint Denis, saloon).",
+"M|Arrombamento~Breaking and Entering|Recuperar o estoque de 4 casas/fazendas|Assalte fazendas cedo, sem matar os moradores (para não perder honra). Salve antes de cada uma.",
+"M|Inteligência Artificial~Artificial Intelligence|Descobrir o destino de Marko Dragic|Estranho “A Bright Bouncing Boy” (Saint Denis), a partir do Cap. 4. Parte I de dia, parte II à noite; volte ao laboratório 2 dias depois.",
+"M|Tirar dos Ricos~Take From the Rich|Roubar ou saquear $250|Saqueie todos os corpos; alvos de missão chegam a ter mais de $100.",
+"M|Abrir a Carteira~Pony Up|Gastar $5000 em lojas|Salve manualmente, gaste tudo em estábulo ou armeiro e depois carregue o save para recuperar o dinheiro.",
+"M|Personalidade Extrema~Extreme Personality|Atingir Honra máxima ou mínima|Só depois de “Paradise Mercifully Escaped” (Cap. 5). No Cap. 6 e Epílogo é mais rápido. Cuidado com Lending a Hand: salve antes.",
+"M|Estranho do Oeste~Western Stranger|Completar 10 sequências de Estranhos|Só conta a sequência inteira. Pode precisar de 12 ou mais para destravar. Veja em Pausa > Progresso.",
+"M|Recompensado~Bountiful|Sobreviver 3 dias com recompensa de $250 em todos os estados|Cause confusão em cada estado até chegar a $250. Em Ambarino, leve um corpo no cavalo e espere alguém achar. Depois durma 3 dias. Salve antes (honra).",
+"M|Item de Colecionador~Collector’s Item|Completar uma sequência de colecionáveis|Basta uma. As gravuras em rocha (10) são as mais rápidas. Outras: cartões, ossos de dinossauro e objetos exóticos.",
+"M|Prestando Homenagens~Paying Respects|Achar o túmulo de cada companheiro caído|Só depois de terminar a história. São 9 túmulos.",
+"M|É Arte~It’s Art|Achar um lar definitivo para a estátua do esquilo|Só após a história. Complete 5 pedidos de caça da Ms. Hobbs (animais perfeitos, 3 estrelas), pegue a estátua e coloque na lareira em Beecher’s Hope. Durma, ela some; ache em 6 locais (o último no Monte Shann).",
+"M|Autossuficiente~Self Sufficient|Criar 30 itens únicos|Abra o menu de criação no acampamento ou na natureza. Receitas vêm da história, de fences e de cozinhar carnes.",
+"M|Só a Pele~Skin Deep|Esfolar toda espécie de animal|Só animais do compêndio (Pausa > Progresso > Compêndio). Os exclusivos de Guarma não contam.",
+"M|Zoólogo~Zoologist|Estudar todos os animais|Use os binóculos perto do animal e confirme “estudar”. Precisa de cada subespécie.",
+"M|Era Deste Tamanho!~It was THIS Big!|Pescar um peixe de 7,3 kg (16 lb)|Vem sozinha ao pegar os 13 peixes lendários.",
+"M|Armado e Carregado~Locked and Loaded|Melhorar todos os componentes de uma arma|No armeiro: Personalizar > Componentes. Salve antes e recarregue depois para recuperar o dinheiro.",
+"M|Aguentar Firme~Grin and Bear it|Sobreviver a 18 ataques de urso, matando o urso em cada um|A pé, deixe o urso agarrar, escape e atire nele enquanto está no chão. Carbine Repeater + munição expressa. Bons locais: entre Wallace Station e Watson’s Cabin, de manhã ou ao meio-dia.",
+"M|Fiel Corcel~Trusty Steed|Vínculo máximo com um cavalo|Alimente, escove, acaricie e cavalgue sem esgotar a estamina. Veja em Pausa > Jogador > Cavalo. Não deixe o cavalo morrer.",
+"O|Fuga~Breakout|Red Dead Online: concluir a introdução|Automática depois da primeira missão cooperativa e da cena com Cripps.",
+"O|Grande Série~Series Major|Red Dead Online: participar de uma Série|Pausa > Online > Showdown ou Corrida. Destrava no fim da partida.",
+"O|Pistoleiro de Aluguel~Gun For Hire|Red Dead Online: aceitar 10 missões de Roaming Livre|Ícones laranja no mapa, de personagens diferentes.",
+"O|Cheio de Eventos~Eventful|Red Dead Online: jogar 5 Eventos de Roaming Livre|Aceite rápido os convites roxos e jogue até o fim.",
+"O|Afivele-se~Buckle Up|Red Dead Online: 5 fivelas de ouro em prêmios|Pausa > Prêmios. Fáceis: 1000 mortes, matar ave voando com arco, visitar 50 lojas, vínculo máximo do cavalo.",
+"O|O Verdadeiro~The Real Deal|Red Dead Online: ser MVP 3 vezes (4+ jogadores)|Partidas públicas. A Série Showdown normal tem menos jogadores (16).",
+"O|Cavalos para Cada Ocasião~Horses for Courses|Red Dead Online: ter 5 cavalos ao mesmo tempo|Baias no estábulo (cerca de $1.500) + 4 Kentucky Saddlers ($50 cada).",
+"O|Primeiros Passos~Getting Started|Red Dead Online: chegar ao Nível 10|Jogue missões e partidas.",
+"O|Notório~Notorious|Red Dead Online: chegar ao Nível 50|São 175.300 XP. Missões, Séries e Roaming Livre.",
+"O|Vale Tudo~All’s Fair|Red Dead Online: frustrar a missão de uma posse rival|Fique perto de estações de trem e dê o golpe final. Dá para combinar com um amigo em posses separadas.",
+"O|Conforto do Lar~Home Comforts|Red Dead Online: comprar 5 melhorias de acampamento|Mais barato: 5 cores de bandeira ($250 no total), com Cripps. Compre as 5 seguidas.",
+"O|Fora do Regulamento~Non-Regulation|Red Dead Online: criar 25 munições|Compre receitas no fence e crie no acampamento.",
+"O|Forme o Bando~Posse Up|Red Dead Online: formar uma Posse permanente|Custa $200. Destrava ao criar, sem precisar convidar ninguém.",
+"O|Mestre Artesão~Master Craftsman|Red Dead Online: criar 20 itens (sem munição)|Cozinhe carne no fogo do acampamento e coma na hora: conta como 2.",
+"O|Açougueiro~Butchered|Red Dead Online: vender 20 itens ao açougueiro|Esfole animais e venda tudo: cada animal grande rende 5–6 itens.",
+"O|Colhido à Perfeição~Picked to Perfection|Red Dead Online: colher 25 ervas|Qualquer planta serve (cogumelos, frutas, flores).",
+"O|A União Faz a Força~Strength in Numbers|Red Dead Online: missão de Roaming Livre em posse com 2+ membros|Forme uma posse, convide alguém e complete uma missão laranja."
+];
+const A=RAW.map((s,i)=>{const p=s.split("|"),n=p[1].split("~");return{id:i,c:p[0],n:n[0],o:n[1],d:p[2],t:p[3]}});
+
+const W={"Legend of the West":"Depois de ganhar todas as outras","Back in the Mud":"Capítulo 1 · Colter (Ambarino)","Just a Scratch":"Capítulo 2 · missão “Enter, Pursued by a Memory”","Breaking and Entering":"Capítulo 2 em diante · casas e fazendas pelo mapa","Friends With Benefits":"Acampamento · Capítulos 2, 3 e 4","Errand Boy":"Acampamento · Capítulos 2 a 4, entre 8h e 20h","Give to the Poor":"Caixa de doações do acampamento · Capítulos 2 a 4","Lending a Hand":"Capítulos 2 a 6 · missões opcionais (dívidas do Strauss, Sister Calderon, etc.)","To Greener Pastures":"Fim do Capítulo 2","Settling Feuds":"Fim do Capítulo 3","Artificial Intelligence":"Saint Denis · Capítulo 4 (laboratório do Marko Dragic)","Washed Ashore":"Fim do Capítulo 4","No Traitors":"Fim do Capítulo 5 · Guarma","Third Time Lucky":"Capítulo 6 · missão “Goodbye, Dear Friend”","Redemption":"Fim do Capítulo 6","Cowboy Builder":"Epílogo · missão “A New Jerusalem”","Endless Summer":"Epílogo · Parte II","Extreme Personality":"Depois de “Paradise Mercifully Escaped” (Cap. 5); mais fácil depois da história","Paying Respects":"Depois da história · 9 túmulos pelo mapa","It’s Art":"Depois da história · Strawberry (Ms. Hobbs) e Beecher’s Hope","Best in the West":"Menu Pausa > Progresso > Conclusão Total","Gold Rush":"Menu Pausa > História (medalhas de cada missão)","Take From the Rich":"Qualquer lugar · saqueando corpos","Hobby Horse":"Strawberry, Rhodes e Saint Denis","Pony Up":"Estábulos, armeiros e lojas","Western Stranger":"Estranhos espalhados pelo mapa","Bountiful":"Os 5 estados: Lemoyne, New Hanover, Ambarino, West Elizabeth e New Austin","Collector’s Item":"Pedras gravadas, cartões, ossos ou objetos exóticos pelo mapa","Self Sufficient":"Acampamento ou natureza · menu de criação","Skin Deep":"Região principal do mapa","Zoologist":"Região principal do mapa","It was THIS Big!":"Lagos e rios · peixes lendários","Locked and Loaded":"Qualquer armeiro (ex.: Valentine)","Grin and Bear it":"Perto de Wallace Station (New Hanover)","Trusty Steed":"Qualquer lugar · sempre com o mesmo cavalo","Breakout":"Red Dead Online · introdução","Horses for Courses":"Red Dead Online · estábulos"};
+const M=new Set(["Lending a Hand","Friends With Benefits","Errand Boy","Give to the Poor"]);
+const G=[
+{t:"Capítulo 1 · Colter",w:"Nenhuma conquista perdível aqui. Aproveite para saquear corpos e jogar com honra.",k:["Back in the Mud"]},
+{t:"Capítulo 2 · Horseshoe Overlook",w:"⚠️ ATENÇÃO: priorize as marcadas com ⚠️. Elas só podem ser feitas entre os Capítulos 2 e 4 (a de Honra, até o Cap. 6). Salve manualmente no início de cada capítulo.",k:["Just a Scratch","Friends With Benefits","Errand Boy","Give to the Poor","Breaking and Entering","Lending a Hand","To Greener Pastures"]},
+{t:"Capítulo 3 · Clemens Point",w:"⚠️ Continue as perdíveis: uma atividade de companheiro, pedidos do acampamento, doações e missões opcionais de Honra antes de terminar o capítulo.",k:["Settling Feuds"]},
+{t:"Capítulo 4 · Shady Belle e Saint Denis",w:"⚠️ Último capítulo da caixa de doações, dos pedidos do acampamento e das atividades de companheiro. Confira o que ainda falta!",k:["Artificial Intelligence","Washed Ashore"]},
+{t:"Capítulo 5 · Guarma",w:"Nada perdível. Não dá para voltar a Guarma, mas os animais exclusivos de lá não contam para as conquistas.",k:["No Traitors"]},
+{t:"Capítulo 6 · Beaver Hollow",w:"⚠️ Para “Dando uma Mão” você precisa de Honra nível 4/8 aqui. Faça as missões opcionais que faltam antes do fim do capítulo.",k:["Third Time Lucky","Redemption"]},
+{t:"Epílogo · Beecher’s Hope",w:"Nada perdível. Terminar o epílogo fecha a história.",k:["Cowboy Builder","Endless Summer"]},
+{t:"Depois da história",w:"Só dá para fazer depois de terminar a história (ou é mais seguro, para não perder Honra).",k:["Extreme Personality","Bountiful","Paying Respects","It’s Art","Best in the West"]},
+{t:"Sem pressa · qualquer momento",w:"Pode fazer quando quiser, durante ou depois da história.",k:["Take From the Rich","Hobby Horse","Pony Up","Locked and Loaded","Self Sufficient","Trusty Steed","Western Stranger","Collector’s Item","Grin and Bear it","It was THIS Big!","Skin Deep","Zoologist","Gold Rush"]},
+{t:"Red Dead Online",w:"Junte dinheiro: cerca de $2.150 para posse permanente, 5 cavalos e 5 melhorias de acampamento.",k:["Breakout","Strength in Numbers","Gun For Hire","Eventful","Series Major","Posse Up","Home Comforts","Picked to Perfection","Butchered","Non-Regulation","Master Craftsman","Horses for Courses","All’s Fair","Buckle Up","The Real Deal","Getting Started","Notorious"]},
+{t:"Platina (PlayStation)",w:"Por último: exige todas as outras conquistas.",k:["Legend of the West"]}];
+const ORD=[];G.forEach((g,i)=>g.k.forEach(n=>{const a=A.find(x=>x.o===n);a.g=i;ORD.push(a.id)}));
+let muted=(function(){try{return localStorage.getItem("rdr2:mute")}catch(x){return null}})()==="1";
+const CATS={H:"História",M:"Mundo",O:"Online",P:"Platina"};
+const PLATS=["PS4","PS5","Xbox One","Xbox Series S","Xbox Series X","PC"];
+const mem={};
+const S={get(k){try{const v=localStorage.getItem(k);return v===null?(mem[k]??null):v}catch(x){return mem[k]??null}},set(k,v){mem[k]=v;try{localStorage.setItem(k,v)}catch(x){}}};
+const e=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const $=id=>document.getElementById(id);
+const K=u=>u.name.toLowerCase()+"|"+u.plat;
+let users=[];try{users=JSON.parse(S.get("rdr2:users")||"[]")}catch(x){}
+let theme=S.get("rdr2:theme")==="light"?"light":"dark";
+function applyTheme(t){theme=t;S.set("rdr2:theme",t);document.documentElement.setAttribute("data-theme",t);document.querySelectorAll(".thb").forEach(b=>b.textContent=t==="dark"?"☀️ Fundo branco":"🌙 Fundo preto")}
+let user=null,done=new Set(),open=new Set(),tab="all",q="",cat="";
+function load(u){user=u;S.set("rdr2:cur",K(u));try{done=new Set(JSON.parse(S.get("rdr2:p:"+K(u))||"[]"))}catch(x){done=new Set()}}
+function save(){S.set("rdr2:p:"+K(user),JSON.stringify([...done]))}
+function list(){const ps=user.plat.startsWith("PS");return A.filter(a=>ps||a.c!=="P")}
+const cur=S.get("rdr2:cur");const f=users.find(u=>K(u)===cur);if(f)load(f);
+
+function loginHTML(){
+  return `<main><div style="text-align:right"><button class="chip thb" data-a="theme" data-v="toggle"></button></div><h1 style="font-size:30px;color:var(--acc);margin:24px 0 4px">RDR2 · Conquistas</h1>
+  <p class="sub" style="margin-bottom:18px">Entre com seu nome de usuário e a plataforma em que você joga.</p>
+  <div class="box"><label>Nome de usuário<input id="un" maxlength="24" placeholder="ex.: Arthur_M" autocomplete="off"></label>
+  <label>Plataforma<select id="pl">${PLATS.map(p=>`<option>${p}</option>`).join("")}</select></label>
+  <button class="btn" data-a="login">Entrar</button><p id="err" class="sub" style="color:var(--acc)"></p></div>
+  ${users.length?`<div class="box"><b>Jogadores salvos</b>${users.map((u,i)=>`<button class="btn alt" data-a="pick" data-v="${i}">${e(u.name)} · ${e(u.plat)}</button>`).join("")}</div>`:""}</main>`;
+}
+function shell(){
+  return `<header><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><h1>🤠 RDR2 Conquistas</h1><button class="chip thb" data-a="theme" data-v="toggle"></button></div><div class="sub" id="who"></div><div class="bar"><i id="fill"></i></div></header>
+  <main id="main"></main>
+  <nav>${[["all","🏆","Conquistas"],["done","✅","Feitas"],["tips","💡","Dicas"],["map","🗺️","Mapa"],["me","👤","Perfil"]].map(t=>`<button data-a="tab" data-v="${t[0]}" id="t_${t[0]}"><span>${t[1]}</span>${t[2]}</button>`).join("")}</nav>`;
+}
+function upd(){
+  const L=list(),n=L.filter(a=>done.has(a.id)).length;
+  $("who").textContent=`${user.name} · ${user.plat} · ${n}/${L.length} conquistas`;
+  $("fill").style.width=(n/L.length*100)+"%";
+}
+function tipsOf(a){
+  const r=a.t.split(/(?<!\b(?:ex|Cap|Ms)\.)(?<=\.)\s+(?=[A-ZÁÉÍÓÚ“(])/);
+  if(r[0]&&/^PERDÍVEL/.test(r[0]))r.shift();
+  if(M.has(a.o))r.push("Salve manualmente (Pausa > História > Salvar) no início de cada capítulo e antes de tentar.","Confira o seu progresso no Rockstar Social Club.");
+  else if(a.c==="H"&&r.length<2)r.push("Avance na história principal: ela destrava sozinha.");
+  r.push("Não use cheats (códigos): eles desativam as conquistas.");return r;
+}
+function nextOf(id){
+  const vis=new Set(list().map(a=>a.id)),L=ORD.filter(i=>vis.has(i)&&!done.has(i));
+  if(!L.length)return null;const pos=ORD.indexOf(id);
+  const f=L.find(i=>ORD.indexOf(i)>pos);return A[f===undefined?L[0]:f];
+}
+function card(a,tip){
+  const d=done.has(a.id),m=M.has(a.o);
+  return `<div class="card ${d?"ok":""}"><button class="chk" data-a="t" data-v="${a.id}" aria-label="Marcar como concluída">${d?"✓":""}</button>
+  <div class="b"><div class="n"><a data-a="det" data-v="${a.id}" style="text-decoration:underline">${e(a.n)}</a></div><div class="o">Nome no jogo: ${e(a.o)}</div><div class="d">${e(a.d)}</div><div class="d">📍 ${e(W[a.o]||"Red Dead Online")}</div>
+  ${m&&!d?`<div class="mis">⚠️ PERDÍVEL: priorize!</div>`:""}
+  ${tip?`<ul class="tip">${tipsOf(a).map(x=>`<li>${e(x)}</li>`).join("")}</ul>`:`<a class="lnk" data-a="det" data-v="${a.id}">Ver dicas →</a>`}</div></div>`;
+}
+function listHTML(){
+  const vis=new Set(list().map(a=>a.id)),s=q.toLowerCase();let out="";
+  if(tab==="all"&&!q){const nx=nextOf(-1);if(nx)out+=`<div class="box" style="border-color:var(--acc)">⭐ <b>Próxima sugerida:</b> <a class="lnk" data-a="det" data-v="${nx.id}">${e(nx.n)}</a><div class="sub">📍 ${e(W[nx.o]||"Red Dead Online")}</div></div>`}
+  G.forEach(g=>{
+    const it=g.k.map(n=>A.find(x=>x.o===n)).filter(a=>vis.has(a.id)&&(tab!=="done"||done.has(a.id))&&(!s||(a.n+a.o+a.d+a.t).toLowerCase().includes(s)));
+    if(!it.length)return;
+    out+=`<div class="grp"><b>${e(g.t)}</b><div class="warn">${e(g.w)}</div></div>`+it.map(a=>card(a,tab==="tips")).join("");
+  });
+  return out||`<div class="empty">${tab==="done"?"Nenhuma conquista marcada ainda. Bora caçar! 🐎":"Nada encontrado."}</div>`;
+}
+function detHTML(id){
+  const a=A[id],d=done.has(id);
+  return `<button class="chip" data-a="close">← Voltar</button><h2>${e(a.n)}</h2><div class="o">Nome no jogo: ${e(a.o)} · ${CATS[a.c]}</div>
+  ${M.has(a.o)?`<div class="box" style="border-color:var(--acc)"><b>⚠️ Conquista perdível!</b> Priorize agora: depois do prazo não dá mais para fazer.</div>`:""}
+  <div class="box"><b>📍 Onde fazer</b><br>${e(W[a.o]||"Red Dead Online")}</div>
+  <div class="box"><b>🎯 O que fazer</b><br>${e(a.d)}</div>
+  <div class="box"><b>💡 Dicas para fazer perfeito</b><ol>${tipsOf(a).map(x=>`<li>${e(x)}</li>`).join("")}</ol></div>
+  <button class="btn ${d?"alt":""}" data-a="t" data-v="${id}">${d?"Desmarcar conquista":"Marcar como concluída ✓"}</button>`;
+}
+let det=null;
+function openDet(id){det=id;let d=$("det");if(!d){d=document.createElement("div");d.id="det";d.className="det";document.body.appendChild(d)}d.innerHTML=detHTML(id);d.scrollTop=0}
+function closeDet(){const d=$("det");if(d)d.remove();det=null}
+function shot(){
+  if(muted)return;
+  try{const C=new(window.AudioContext||window.webkitAudioContext)(),t=C.currentTime,n=Math.floor(C.sampleRate*.5),b=C.createBuffer(1,n,C.sampleRate),d=b.getChannelData(0);
+  for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,3);
+  const s=C.createBufferSource(),f=C.createBiquadFilter(),g=C.createGain();s.buffer=b;f.type="lowpass";f.frequency.value=2600;g.gain.value=1;s.connect(f);f.connect(g);g.connect(C.destination);s.start(t);
+  const o=C.createOscillator(),og=C.createGain();o.frequency.setValueAtTime(160,t);o.frequency.exponentialRampToValueAtTime(40,t+.25);og.gain.setValueAtTime(.9,t);og.gain.exponentialRampToValueAtTime(.001,t+.3);o.connect(og);og.connect(C.destination);o.start(t);o.stop(t+.35)}catch(x){}
+}
+function view(){
+  if(tab==="map")return `<iframe src="https://rdr2map.com/" title="Mapa do RDR2" allow="fullscreen" referrerpolicy="no-referrer" style="width:100%;height:calc(100dvh - 270px);min-height:360px;border:1px solid var(--line);border-radius:12px;background:var(--card)"></iframe><p class="sub" style="margin:8px 0 0">Mapa interativo do rdr2map.com. Se ele não aparecer, o site pode estar bloqueando a exibição dentro de outros apps.</p><a class="btn alt" href="https://rdr2map.com/" target="_blank" rel="noopener">Abrir o mapa em outra aba</a>`;
+  if(tab==="me"){
+    return `<div class="box"><h2 style="font-size:22px">${e(user.name)}</h2><p class="sub">Plataforma: ${e(user.plat)}</p>
+    ${users.length>1?users.filter(u=>K(u)!==K(user)).map(u=>`<button class="btn alt" data-a="pick" data-v="${users.indexOf(u)}">Trocar para ${e(u.name)} · ${e(u.plat)}</button>`).join(""):""}
+    <div class="box" style="margin:12px 0 0"><b>Tema</b><div style="display:flex;gap:8px;margin-top:8px"><button class="btn ${theme==="dark"?"":"alt"}" style="margin:0" data-a="theme" data-v="dark">⚫ Preto</button><button class="btn ${theme==="light"?"":"alt"}" style="margin:0" data-a="theme" data-v="light">⚪ Branco</button></div></div>
+    <button class="btn alt" data-a="mute">${muted?"🔇 Som de tiro desligado":"🔫 Som de tiro ligado"}</button>
+    <button class="btn alt" data-a="logout">Adicionar / trocar jogador</button>
+    <p class="sub" style="margin-top:14px">O progresso fica salvo neste aparelho, separado por jogador.</p></div>`;
+  }
+  return `<input id="q" type="search" placeholder="Buscar conquista ou dica…" value="${e(q)}" style="margin-bottom:8px"><div id="list">${listHTML()}</div>`;
+}
+function paint(){
+  ["all","done","tips","map","me"].forEach(t=>$("t_"+t).classList.toggle("on",t===tab));
+  $("main").innerHTML=view();upd();
+  const i=$("q");if(i)i.oninput=()=>{q=i.value;$("list").innerHTML=listHTML()};
+}
+function start(){
+  if(!user){$("app").innerHTML=loginHTML();return}
+  $("app").innerHTML=shell();paint();
+}
+function congrats(a){
+  shot();
+  const L=list(),cnt=L.filter(x=>done.has(x.id)).length,nx=nextOf(a.id);
+  const m=document.createElement("div");m.className="modal";
+  const em=["🎉","⭐","🤠","🐎","🌵"];let c="";
+  for(let i=0;i<18;i++)c+=`<span class="fall" style="left:${Math.random()*95}%;animation-delay:${Math.random()*1.2}s">${em[i%5]}</span>`;
+  m.innerHTML=c+`<div class="pop"><div style="font-size:48px">🏆</div><h2>Parabéns, ${e(user.name)}!</h2><p>Você concluiu a conquista<br><b>${e(a.n)}</b></p><p class="sub">${cnt} de ${L.length} conquistas concluídas</p>
+  ${nx?`<p><b>⭐ Próxima sugerida:</b><br>${e(nx.n)}<br><span class="sub">📍 ${e(W[nx.o]||"Red Dead Online")}</span></p><button class="btn alt" id="nx">Ver dicas da próxima</button>`:`<p><b>Você completou todas! 🤠</b></p>`}
+  <button class="btn" id="okm" style="margin-top:8px">Continuar</button></div>`;
+  document.body.appendChild(m);m.querySelector("#okm").onclick=()=>m.remove();
+  const b=m.querySelector("#nx");if(b)b.onclick=()=>{m.remove();openDet(nx.id)};
+}
+document.addEventListener("click",ev=>{
+  const t=ev.target.closest("[data-a]");if(!t)return;
+  const a=t.dataset.a,v=t.dataset.v;
+  if(a==="det"){openDet(+v);return}
+  if(a==="close"){closeDet();return}
+  if(a==="mute"){muted=!muted;S.set("rdr2:mute",muted?"1":"0");paint();return}
+  if(a==="theme"){applyTheme(v==="toggle"?(theme==="dark"?"light":"dark"):v);if(user&&tab==="me")paint();return}
+  if(a==="login"){
+    const name=$("un").value.trim();
+    if(!name){$("err").textContent="Digite seu nome de usuário.";return}
+    const u={name,plat:$("pl").value};
+    if(!users.some(x=>K(x)===K(u))){users.push(u);S.set("rdr2:users",JSON.stringify(users))}
+    load(u);tab="all";start();
+  }else if(a==="pick"){load(users[+v]);tab="all";start()}
+  else if(a==="logout"){user=null;S.set("rdr2:cur","");start()}
+  else if(a==="tab"){tab=v;cat="";q="";paint();window.scrollTo(0,0)}
+  else if(a==="cat"){cat=v;paint()}
+  else if(a==="tip"){open.add(+v);$("list").innerHTML=listHTML()}
+  else if(a==="t"){
+    const id=+v,x=A[id];
+    if(done.has(id))done.delete(id);else{done.add(id);congrats(x)}
+    save();upd();const L2=$("list");if(L2)L2.innerHTML=listHTML();if(det!==null){$("det").innerHTML=detHTML(det)}
+  }
+});
+applyTheme(theme);start();applyTheme(theme);
+if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+</script>
+</body>
+</html>
